@@ -6,7 +6,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -30,9 +29,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val submit = findViewById<Button>(R.id.button2)
-        val etEmail = findViewById<EditText>(R.id.editTextTextEmailAddress)
-        val etPassword = findViewById<EditText>(R.id.editTextNumberPassword)
+        val submit = findViewById<Button>(R.id.submit)
+        val etEmail = findViewById<EditText>(R.id.etEmail)
+        val etPassword = findViewById<EditText>(R.id.etPassword)
         submit.setOnClickListener {
             val email = etEmail.text.toString()
             val password = etPassword.text.toString()
