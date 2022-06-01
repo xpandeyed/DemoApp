@@ -35,6 +35,7 @@ class LoginActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            intent.flags = (Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }
 
@@ -47,7 +48,9 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     val intent = Intent(this, BottomNavActivity::class.java)
+                    intent.flags = (Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
+
                     Toast.makeText(baseContext, "Authentication Successful.", Toast.LENGTH_SHORT).show()
                 } else {
                     // If sign in fails, display a message to the user.
